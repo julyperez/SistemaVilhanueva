@@ -17,6 +17,7 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         initComponents();
         setTitle("Sistema do IFMS");
         setExtendedState(MAXIMIZED_BOTH);
+ 
     }
 
     /**
