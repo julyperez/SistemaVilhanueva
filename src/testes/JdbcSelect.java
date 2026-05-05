@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package dao;
+package testes;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,37 +11,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import testes.JdbcCrud;
 
-/**S
+/**
  *
  * @author u07449294150
  */
-public class DaoMpvUsuarios extends DaoAbstract{
-
-    @Override
-    public void insert(Object object) {
-        MpvUsuarios mpvUsuarios = (MpvUsuarios )object;
-    }
-
-    @Override
-    public void update(Object object) {
-                                            
-    }
-
-    @Override
-    public void delete(Object object) {
-        
-    }
-
-    @Override
-    public Object list(int id) {
-        return null;
-    }
-
-    @Override
-    public Object listAll() {
-                try {
+public class JdbcSelect {
+        public static void main(String[] args) {
+        try {
             Class.forName("com.mysql.jdbc.Driver");
             String url, user, password;
             url = "jdbc:mysql://10.7.0.51:33062/db_marcos_vilhanueva";
@@ -64,6 +41,6 @@ public class DaoMpvUsuarios extends DaoAbstract{
         } catch (SQLException ex) {
             Logger.getLogger(JdbcCrud.class.getName()).log(Level.SEVERE, null, ex);
         } 
-        return null;
+        System.out.println("rodou");           
     }   
 }

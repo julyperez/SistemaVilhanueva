@@ -22,7 +22,7 @@ public class JdbcCrud {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url, user, password;
-            url = "jdbc:mysql://10.7.0.51:33062/db_marcos_vilhanueva"; ;;;
+            url = "jdbc:mysql://10.7.0.51:33062/db_marcos_vilhanueva";
             user = "marcos_vilhanueva"; 
             password = "marcos_vilhanueva";
            // url = "jdbc://mysql/localhost/db_marcos_vilhanueva"; 
@@ -31,15 +31,17 @@ public class JdbcCrud {
            Connection cnt;
            cnt = DriverManager.getConnection(url, user, password);
            //106
-           
-            PreparedStatement pst = cnt.prepareStatement("insert into "
-                   + "mpv_usuarios(mpv_idusuarios, mpv_nome, mpv_apelido, mpv_cpf)"
-                   + " values(?,?,?,?)");
+            //String sql = "update mpv_usuarios set mpv_nome=?,"
+                  //  + " mpv_apelido=?, "
+                  // + "mpv_cpf=?"
+                  // + "where mpv_idusuarios=?";]
+            String sql = "delete from mpv_usuarios where mpv_idusuarios=?";
+            PreparedStatement pst = cnt.prepareStatement(sql);
             pst.setInt(1, 206);
-            pst.setString(2, "julyy");
-            pst.setString(3, "perezz");
-            pst.setString(4, "07449294150");
-            pst.executeUpdate();
+//            pst.setString(1, "july perez");
+//            pst.setString(2, "vilhslva");
+//            pst.setString(3, "423424");
+              pst.executeUpdate();
             
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(JdbcCrud.class.getName()).log(Level.SEVERE, null, ex);
